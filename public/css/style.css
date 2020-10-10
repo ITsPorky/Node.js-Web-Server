@@ -1,0 +1,497 @@
+/* ======================================== */
+/* Fonts */
+/* ======================================== */
+
+
+/* ======================================== */
+/* Main CSS for Portfolio page */
+/* ======================================== */
+#fouc{
+    display: none;
+}
+html{
+    scroll-behavior: Smooth;
+}
+body{
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+section{
+    margin: auto;
+    display: block;
+    padding-bottom: 5em;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+hr{
+    border: 1px solid #00aaff;
+}
+*{
+    box-sizing: border-box;
+}
+
+/* ============================================ */
+/* Nav Content */
+/* ============================================ */
+.dropbtn{
+    background-color:rgba(0,0,0,0);
+    color: #ccc;
+    padding: 1.2em 2.1em 1em 2.1em;
+    font-size: 2em;
+    border: none;
+}
+@media(max-width: 899px) {
+    #logo{
+        width: 15%;
+        height: auto;
+        float: left;
+        position: relative;
+        margin: 10px 30px;
+    }
+    .dropdown{
+        float: right;
+        position: relative;
+        display: block;
+    }
+    .dropdown-content{ 
+        font-size: 1.5em;
+        display: none;
+        background-color: #222;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        position: absolute;
+        z-index: 1;
+    }
+    .dropdown-content a{
+        color: #ccc;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover{
+        background-color: #222;
+        color: #00aaff;
+    }
+    .dropdown:hover .dropdown-content{
+        display: block;
+    }
+    .dropdown:hover .dropbtn{
+        background-color: #222;
+        color: #00aaff;
+    }
+}
+@media(min-width: 900px) {
+    .nav{
+        display: inline-block;
+        padding: 0 12.5em;
+    }
+    .nav-left{
+        float: left;
+        display: block;
+        margin: 0;
+    }
+    #logo{
+        width: 100px;
+        height: auto;
+        float: left;
+        margin: 10px 30px;
+    }
+    .dropdown .dropbtn{
+        visibility: hidden;
+        display: contents;
+    }
+    .dropdown{
+        float: right;
+        position: relative;
+    }
+    .dropdown-content{
+        font-size: 1.5em;
+        position: relative;
+    }
+    .dropdown-content a, a:visited{
+        color: #ccc;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        border-bottom: #222;
+    }
+    .dropdown-content a:active{
+        color: #00aaff;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        border-bottom: #222;
+    }
+    .dropdown-content a:hover{
+        color: #00aaff;
+    }
+    .dropdown .dropdown-content{
+        display: block;
+    }
+    .dropdown .dropdown-content a{
+        float: left;
+    }    
+}
+
+/* ================================================= */
+/* Index Page */
+/* ================================================= */
+#home{
+    padding-top: 0;
+}
+.back-image{
+    background-image: linear-gradient(to top, rgba(34,34,34,0.5), rgba(34,34,34,1)), url(../images/background.jpg);
+    background-size: cover;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.back-image::before{
+    opacity: 0.3;
+}
+.main{
+    margin: auto;
+    display: inline-block;
+    padding: 1em 2em;
+    font-size: 2em;
+    text-align: center;
+}
+.main h1{
+    color: #fff;
+}
+.main-right img{
+    width: 100%;
+    float: center;
+    border-radius: 30%;
+}
+@media(min-width: 900px) {
+    .main{
+        display: inline-block;
+        padding: 1em 10em;
+        font-size: 1.5em;
+        text-align: left;
+        width: 100%;
+    }
+    .main-left{
+        display: block;
+        width: 50%;
+        padding-top: 1em;
+        padding-left: 0em;
+        padding-bottom: 1em;
+        padding-right: 5%;
+        font-size: 1em;
+        text-align: left;
+    }
+    .main-right img{
+        display: block;
+        width: 50%;
+        padding: 2%;
+        float: right;
+        border-radius: 50%;
+    }
+}
+
+/* ============================================ */
+/* Projects Page */
+/* ============================================ */
+.main-projects{
+    font-size: 1.5em;
+    margin: auto;
+    padding: 1em 2em;
+    text-align: left;
+}
+.contents h3{
+    color: #222;
+}
+.contents p{
+    color: #222;
+}
+.row{
+    margin: 1em -2em;
+}
+.row,
+.row > .column{
+    padding: 1em;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.contents{
+    padding: 0.5em;
+    background-color: #fff;
+}
+.project-img{
+    opacity: 1;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden; 
+}
+.middle{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.project:hover .project-img{
+    opacity: 0.5;
+}
+.project:hover .middle{
+    opacity: 1;
+}
+.project-info{
+    background-color: #00aaff;
+    color: #fff;
+    font-size: 0.8em;
+    padding: 0.9em 1.15em;
+}
+@media(max-width: 899px) {
+    .project{
+        background-color: #fff;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        width: 100%;
+        padding: 0.5em;
+    }
+    .column{
+        float: left;
+        width: 100%;
+    }
+}
+@media(min-width: 900px) {
+    .project{
+        display: inline-block;
+        position: relative;
+        width: 100%; 
+    }
+    .main-projects{
+        font-size: 1.5em;
+        margin: auto;
+        padding: 1em 10em;
+        text-align: left;
+    }
+    .column{
+        float: left;
+        width: 50%;
+    }
+}
+
+/* ================================================= */
+/* About Page */
+/* ================================================= */
+#about{
+    margin: auto;
+    width: 98%;
+}
+.bar{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.5em;
+}
+.skills{
+    text-align: center; 
+    font-size: 1em;
+    padding-top: 2%; 
+    padding-bottom: 2%; 
+    color: #000;
+    border-radius: 0.5em;
+}
+.cpp{width: 75%; background-color: #00aaff;}
+.java{width: 75%; background-color: #00aaff;}
+.python{width: 50%; background-color: #00aaff;}
+.html{width: 75%; background-color: #00aaff;}
+.latex{width: 50%; background-color: #00aaff;}
+.css{width: 75%; background-color: #00aaff;}
+.js{width: 75%; background-color: #00aaff;}
+.react{width: 25%; background-color: #00aaff;}
+.php{width: 75%; background-color: #00aaff;}
+.ps{width: 75%; background-color: #00aaff;}
+.pp{width: 50%; background-color: #00aaff;}
+.node{width: 25%; background-color: #00aaff;}
+.express{width: 50%; background-color: #00aaff;}
+.jquery{width: 50%; background-color: #00aaff;}
+.sql{width: 25%; background-color: #00aaff;}
+.about{
+    text-align: center;
+}
+@media(min-width: 900px) {
+    .about-left{
+        display: block;
+        width: 50%;
+        padding-top: 0em;
+        padding-left: 0em;
+        padding-bottom: 1em;
+        padding-right: 5%;
+        font-size: 1em;
+        text-align: left;
+        float: left;
+    }
+    .about-right{
+        display: block;
+        width: 50%;
+        padding-top: 0em;
+        padding-left: 5%;
+        padding-bottom: 1em;
+        padding-right: 0em;
+        font-size: 1em;
+        text-align: left;
+        float: right;
+    }
+    .about-top{
+        display: inline-block;
+        width: 100%;
+        font-size: 1em;
+        text-align: left;
+    }
+}
+
+/* ================================================= */
+/* Contact Page for larger devices */
+/* ================================================= */
+.github{
+    text-decoration: none;
+    width: 20%;
+    padding: 2% 5%;
+    border-style: none;
+    /* border: 1px solid #fff; */
+    border-radius: 7% 7%;
+    color: #fff;
+    background-color: #333;
+}
+@media(min-width: 900px) {
+    #contact{
+        margin: auto;
+        width: 70%;
+    }
+    .github{
+        margin: auto;
+    }
+    .details{
+        text-align: center;
+    }
+}
+@media(max-width: 899px) {
+    .github{
+        margin: auto;
+    }
+}
+
+/* ================================================= */
+/* Footer for larger devices */
+/* ================================================= */
+@media(min-width: 900px) {
+    footer{
+        display: block;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        font-size: 1em;
+        text-align: center;
+        color: #fff;
+    }
+}
+@media(max-width: 899px) {
+    footer{
+        display: block;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        font-size: 1em;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+/* ================================================= */
+/* Footer for larger devices */
+/* ================================================= */
+#totop{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+.totopbtn{
+    border-radius: 15%;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    z-index: 1;
+    background-color: #000;
+}
+@media(max-width: 899px) {
+    #totop{
+        padding: 15px 20px;
+    }
+    .totopbtn{
+        width: 70px;
+        height: 70px;
+    }
+}
+@media(min-width: 900px) {
+    #totop{
+        padding: 30px 20px;
+    }
+    .totopbtn{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* ***************************** */
+/* Image Fade In                 */
+/* ***************************** */
+.fade-in {
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+    -moz-animation: fadeIn ease 5s;
+    -o-animation: fadeIn ease 5s;
+    -ms-animation: fadeIn ease 5s;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
