@@ -54,10 +54,7 @@ app.use(logger);
 app.use(expressip().getIpInfoMiddleware);
 
 // Create a server object
-app.get('/', (req, res) => {
-    // User Ip Info
-    let ipInfo = req.ip;
-    
+app.get('/', (req, res) => { 
     // Handle requests
     let parsedURL = url.parse(req.url, true);
     // Remove leading and trailing slashes

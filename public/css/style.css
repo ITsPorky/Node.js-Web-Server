@@ -462,6 +462,22 @@ hr{
 }
 
 /* ***************************** */
+/* Image View Full Screen        */
+/* ***************************** */
+.full-img-border{
+    margin: auto;
+    width: 70%;
+    height: auto;
+    padding: 0.5em;
+    background-color: #fff;
+}
+.full-img{
+    display: inline-block;
+    position: relative;
+    width: 100%; 
+}
+
+/* ***************************** */
 /* Image Fade In                 */
 /* ***************************** */
 .fade-in {
